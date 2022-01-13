@@ -1008,11 +1008,11 @@ class MultiModalClassificationModel:
 
         # If data is a tuple,
         # this is for early stopping and first element is data_path and second element is files_list
-        if isinstance(data, tuple):
+        if isinstance(eval_data, tuple):
             data, files_list = data
 
         eval_dataset = self.load_and_cache_examples(
-            data,
+            eval_data,
             files_list=files_list,
             image_path=image_path,
             text_label=self.args.text_label,
